@@ -1,15 +1,20 @@
-FROM node:21.7.3-alpine3.18
+# Menggunakan Node.js versi LTS (misalnya 16)
+FROM node:16
 
-RUN mkdir -p /opt/app
+# Menentukan direktori kerja di dalam container
+WORKDIR /usr/src/app
 
-WORKDIR /opt/app
-
+# Menyalin file package.json dan package-lock.json ke dalam container
 COPY package*.json ./
 
+# Install dependencies
 RUN npm install
 
+# Menyalin seluruh kode aplikasi ke dalam container
 COPY . .
 
+# Menentukan port yang akan dibuka oleh aplikasi
 EXPOSE 5000
 
-CMD ["npm", "run", "start"]
+# Menjalankan aplikasi menggunakan Node.js
+CMD ["node", "index.js"]
