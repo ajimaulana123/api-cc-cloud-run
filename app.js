@@ -2,9 +2,9 @@ const express = require("express");
 const morgan = require("morgan");
 const cors = require("cors");
 const bodyParser = require("body-parser");
-const newsRoutes = require("./route.newsRoutes"); // kasih file
-const authRoutes = require("./route.authRoutes"); // kasih file
-const userRoutes = require("./route.userRoutes"); // kasih file
+const newsRoutes = require("./route.news"); // kasih file
+const authRoutes = require("./route.auth"); // kasih file
+const userRoutes = require("./route.user"); // kasih file
 const connectDB = require('./db'); // kasih file
 
 const app = express();
